@@ -1,6 +1,6 @@
-# Express.js Application Setup
+# Notes-Sync BE
 
-This is a guide to setting up an Express.js application using Node.js version v16.20.2.
+This is a guide to setting up the backend of notes-sync application using Node.js version v16.20.2. It is required to run the websocket server for syncing multiple devices/tabs in real time for updating notes and handling conflicts. 
 
 ## Prerequisites
 
