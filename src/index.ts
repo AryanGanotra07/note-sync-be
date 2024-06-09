@@ -6,16 +6,8 @@ import { logger } from './logger';
 import { WebSocketServer } from 'ws';
 const setupWSConnection = require('y-websocket/bin/utils').setupWSConnection;
 
-/**
- * CORSConfiguration
- */
 export const allowedOrigins = ['http://localhost:4200'];
 
-/**
- * Server INITIALIZATION and CONFIGURATION
- * CORS configuration
- * Request body parsing
- */
 const app = express();
 app.use(cors(
   {
@@ -27,14 +19,10 @@ app.use(cors(
 ));
 app.use(express.json());
 
-/**
- * Create an http server
- */
+
 export const httpServer = createServer(app);
 
-/**
- * Create a wss (Web Socket Secure) server
- */
+
 export const wss = new WebSocketServer({ server: httpServer });
 
 function onError(error: any) {
@@ -48,9 +36,6 @@ function onListening() {
 httpServer.on('error', onError);
 httpServer.on('listening', onListening);
 
-/**
- * On connection, use the utility file provided by y-websocket
- */
 wss.on('connection', (ws, req) => {
   logger.info("wss:connection");
   setupWSConnection(ws, req);
