@@ -22,7 +22,15 @@ git clone https://github.com/AryanGanotra07/note-sync-be.git
 cd note-sync-be
 ```
 
+### 2. Install packages
+
 ```bash
 npm install
+```
+
+### 3. Run project
+
+```bash
+npm start
 ```
 
